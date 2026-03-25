@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,60 +12,81 @@
 <header class="navbar">
   <div class="logo">event<span>Aionion</span></div>
 
-  <div class="search-box">
-    <input type="text" placeholder="Search events..." />
-  </div>
+  <input class="search" placeholder="Search events..." />
 
-  <div class="nav-actions">
-    <button class="create-btn">Create Event</button>
+  <div class="nav-right">
+    <button class="create-btn">+ Create Event</button>
     <button class="login-btn">Login</button>
   </div>
 </header>
 
+<!-- CATEGORY -->
+<div class="categories">
+  <button class="active">All</button>
+  <button>Music</button>
+  <button>Tech</button>
+  <button>Business</button>
+</div>
+
 <!-- HERO -->
 <section class="hero">
-  <h1>Discover Amazing Events 🎉</h1>
-  <p>Book tickets, explore events, and enjoy experiences</p>
+  <h1>Find Your Next Experience 🎉</h1>
 </section>
 
 <!-- EVENTS -->
-<section class="events-section">
-  <h2>Featured Events ✨</h2>
+<section class="events">
+  <div class="grid">
 
-  <div class="events-grid">
-
-    <div class="card">
-      <img src="https://source.unsplash.com/400x250/?concert" />
-      <div class="card-content">
-        <h3>Music Night Festival</h3>
+    <div class="card" onclick="openEvent()">
+      <img src="https://source.unsplash.com/400x250/?concert"/>
+      <div class="content">
+        <h3>Music Fest 2026</h3>
         <p>📍 Chennai</p>
-        <p>📅 Apr 10, 2026</p>
-        <span class="tag paid">Paid</span>
+        <p>📅 Apr 10</p>
+        <span class="paid">Paid</span>
       </div>
     </div>
 
     <div class="card">
-      <img src="https://source.unsplash.com/400x250/?conference" />
-      <div class="card-content">
-        <h3>Tech Conference</h3>
-        <p>📍 Bangalore</p>
-        <p>📅 May 2, 2026</p>
-        <span class="tag free">Free</span>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://source.unsplash.com/400x250/?startup" />
-      <div class="card-content">
+      <img src="https://source.unsplash.com/400x250/?startup"/>
+      <div class="content">
         <h3>Startup Meetup</h3>
-        <p>📍 Hyderabad</p>
-        <p>📅 June 15, 2026</p>
-        <span class="tag paid">Paid</span>
+        <p>📍 Bangalore</p>
+        <p>📅 May 2</p>
+        <span class="free">Free</span>
       </div>
     </div>
 
   </div>
 </section>
+
+<!-- EVENT MODAL -->
+<div class="modal" id="eventModal">
+  <div class="modal-content">
+    <span class="close" onclick="closeEvent()">&times;</span>
+
+    <img src="https://source.unsplash.com/800x400/?concert"/>
+
+    <h2>Music Fest 2026</h2>
+    <p>📍 Chennai | 📅 Apr 10, 2026</p>
+
+    <p class="desc">
+      Enjoy live music, food, and amazing vibes with top artists.
+    </p>
+
+    <button class="book-btn">Book Ticket</button>
+  </div>
+</div>
+
+<script>
+function openEvent() {
+  document.getElementById("eventModal").style.display = "flex";
+}
+
+function closeEvent() {
+  document.getElementById("eventModal").style.display = "none";
+}
+</script>
 
 </body>
 </html>
